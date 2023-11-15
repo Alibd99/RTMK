@@ -1,0 +1,375 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  15/Mar/2023  11:31:11
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Exe\RTMG.out
+#    Map file     =
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\List\RTMG.map
+#    Command line =
+#        -f C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Exe\RTMG.out.rsp
+#        (C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\communicationTask.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\context_switching_functions_march_2019.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\cstartup.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\exceptions.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\kernel_functions.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\lists.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\main.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\startup_sam3x.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\system_sam3x.o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\Timer.o
+#        --no_out_extension -o
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Exe\RTMG.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\List\RTMG.map
+#        --config
+#        C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\sam3x8-sram_BigHeap.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale
+#        --cpu=Cortex-M3 --fpu=None)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__Heap_Handler  = Basic
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x2007'0000 { ro section .intvec };
+"P1":  place in [from 0x2007'0000 to 0x2008'7fff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2007'0000 to 0x2008'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy with packing = none, complex ranges { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xf4
+  .intvec                     0x2007'0000    0xf4  <Block>
+    .intvec          const    0x2007'0000    0xf4  startup_sam3x.o [1]
+                            - 0x2007'00f4    0xf4
+
+"P1-P2", part 1 of 2:                      0x11b0
+  .text              ro code  0x2007'00f4   0x370  main.o [1]
+  .text              ro code  0x2007'0464   0x338  communicationTask.o [1]
+  .text              ro code  0x2007'079c   0x234  kernel_functions.o [1]
+  .text              ro code  0x2007'09d0    0x60  Timer.o [1]
+  .text              ro code  0x2007'0a30    0xa0  system_sam3x.o [1]
+  .text              ro code  0x2007'0ad0   0x1c8  context_switching_functions_march_2019.o [1]
+  .text              ro code  0x2007'0c98   0x170  heap0.o [2]
+  .text              ro code  0x2007'0e08     0x4  heaptramp0.o [2]
+  .text              ro code  0x2007'0e0c    0xa6  ABImemcpy.o [3]
+  .text              ro code  0x2007'0eb2    0x2a  copy_init3.o [3]
+  .text              ro code  0x2007'0edc   0x234  lists.o [1]
+  .text              ro code  0x2007'1110    0x2c  xgetmemchunk.o [2]
+  .text              ro code  0x2007'113c    0x12  xxmemxmemzero.o [2]
+  .text              ro code  0x2007'114e     0x2  exceptions.o [1]
+  .text              ro code  0x2007'1150    0x30  startup_sam3x.o [1]
+  .text              ro code  0x2007'1180     0xc  cstartup.o [1]
+  .text              ro code  0x2007'118c    0x1e  cmain.o [3]
+  .text              ro code  0x2007'11ac    0x28  data_init.o [3]
+  .text              ro code  0x2007'11d4     0x4  exit.o [2]
+  .text              ro code  0x2007'11d8     0xa  cexit.o [3]
+  .text              ro code  0x2007'11e4    0x14  exit.o [4]
+  .iar.init_table    const    0x2007'11f8    0x14  - Linker created -
+  .rodata            const    0x2007'120c     0x0  copy_init3.o [3]
+  P1-P2 s0                    0x2007'120c    0x4c  <Init block>
+    .bss             inited   0x2007'120c     0x8  heap0.o [2]
+    .data            inited   0x2007'1214     0x4  main.o [1]
+    .data            inited   0x2007'1218     0x4  main.o [1]
+    .data            inited   0x2007'121c     0x4  main.o [1]
+    .data            inited   0x2007'1220     0x4  system_sam3x.o [1]
+    .bss             inited   0x2007'1224     0x4  kernel_functions.o [1]
+    .bss             inited   0x2007'1228     0x4  kernel_functions.o [1]
+    .bss             inited   0x2007'122c     0x4  kernel_functions.o [1]
+    .bss             inited   0x2007'1230     0x4  kernel_functions.o [1]
+    .bss             inited   0x2007'1234     0x4  lists.o [1]
+    .bss             inited   0x2007'1238     0x4  lists.o [1]
+    .bss             inited   0x2007'123c     0x4  lists.o [1]
+    .bss             inited   0x2007'1240     0x4  main.o [1]
+    .bss             inited   0x2007'1244     0x4  main.o [1]
+    .bss             inited   0x2007'1248     0x4  main.o [1]
+    .bss             inited   0x2007'124c     0x4  main.o [1]
+    .bss             inited   0x2007'1250     0x4  main.o [1]
+    .bss             inited   0x2007'1254     0x4  xgetmemchunk.o [2]
+  Initializer bytes  const    0x2007'1258    0x4c  <for P1-P2 s0>
+                            - 0x2007'12a4  0x11b0
+
+"P1-P2", part 2 of 2:                      0x2800
+  CSTACK                      0x2007'12a8   0x800  <Block>
+    CSTACK           uninit   0x2007'12a8   0x800  <Block tail>
+  HEAP                        0x2007'1aa8  0x2000  <Block>
+    HEAP             uninit   0x2007'1aa8  0x2000  <Block tail>
+                            - 0x2007'3aa8  0x2800
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+  0x2007'12a4  0x2007'12a7       0x4
+  0x2007'3aa8  0x2008'7fff  0x1'4558
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4c:
+          0x2007'1258  0x4c
+    1 destination range, total size 0x4c:
+          0x2007'120c  0x4c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                                    ro code  ro data  rw data
+    ------                                    -------  -------  -------
+command line/config:
+    -------------------------------------------------------------------
+    Total:
+
+C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj: [1]
+    Timer.o                                        96
+    communicationTask.o                           824
+    context_switching_functions_march_2019.o      456
+    cstartup.o                                     12
+    exceptions.o                                    2
+    kernel_functions.o                            564       16       16
+    lists.o                                       564       12       12
+    main.o                                        880       32       32
+    startup_sam3x.o                                48      244
+    system_sam3x.o                                160        4        4
+    -------------------------------------------------------------------
+    Total:                                      3'606      308       64
+
+dl7M_tln.a: [2]
+    exit.o                                          4
+    heap0.o                                       368        8        8
+    heaptramp0.o                                    4
+    xgetmemchunk.o                                 44        4        4
+    xxmemxmemzero.o                                18
+    -------------------------------------------------------------------
+    Total:                                        438       12       12
+
+rt7M_tl.a: [3]
+    ABImemcpy.o                                   166
+    cexit.o                                        10
+    cmain.o                                        30
+    copy_init3.o                                   42
+    data_init.o                                    40
+    -------------------------------------------------------------------
+    Total:                                        288
+
+shb_l.a: [4]
+    exit.o                                         20
+    -------------------------------------------------------------------
+    Total:                                         20
+
+    Gaps                                            4
+    Linker created                                          20   10'240
+-----------------------------------------------------------------------
+    Grand Total:                                4'356      340   10'316
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base   0x2007'11f8          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x2007'120c          --   Gb  - Linker created -
+.intvec$$Base           0x2007'0000          --   Gb  - Linker created -
+.intvec$$Limit          0x2007'00f4          --   Gb  - Linker created -
+?main                   0x2007'118d         Code  Gb  cmain.o [3]
+ADC_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+Aldata                  0x2007'120c    0x8  Data  Lc  heap0.o [2]
+BusFault_Handler        0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+CAN0_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+CAN1_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+CSTACK$$Base            0x2007'12a8          --   Gb  - Linker created -
+CSTACK$$Limit           0x2007'1aa8          --   Gb  - Linker created -
+DACC_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+DMAC_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+DebugMon_Handler        0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+Dummy_Handler           0x2007'114f    0x2  Code  Gb  exceptions.o [1]
+EFC0_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+EFC1_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+HEAP$$Base              0x2007'1aa8          --   Gb  - Linker created -
+HEAP$$Limit             0x2007'3aa8          --   Gb  - Linker created -
+HSMCI_Handler           0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+HardFault_Handler       0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+KernelMode              0x2007'1228    0x4  Data  Gb  kernel_functions.o [1]
+LoadContext_In_Run      0x2007'0bf9         Code  Gb  context_switching_functions_march_2019.o [1]
+LoadContext_In_Terminate
+                        0x2007'0beb         Code  Gb  context_switching_functions_march_2019.o [1]
+MemManage_Handler       0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+NMI_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+NVIC_SetPriority        0x2007'00f5   0x28  Code  Lc  main.o [1]
+NextTask                0x2007'1230    0x4  Data  Gb  kernel_functions.o [1]
+PIOA_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+PIOB_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+PIOC_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+PIOD_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+PMC_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+PWM_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+PendSV_Handler          0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+PreviousTask            0x2007'122c    0x4  Data  Gb  kernel_functions.o [1]
+RSTC_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+RTC_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+RTT_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+ReadyList               0x2007'1234    0x4  Data  Gb  lists.o [1]
+Region$$Table$$Base     0x2007'11f8          --   Gb  - Linker created -
+Region$$Table$$Limit    0x2007'120c          --   Gb  - Linker created -
+Reset_Handler           0x2007'1179    0x8  Code  Gb  startup_sam3x.o [1]
+SPI0_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+SSC_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+SUPC_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+SVC_Handler             0x2007'0b21         Code  Gb  context_switching_functions_march_2019.o [1]
+SwitchContext           0x2007'0bdd         Code  Gb  context_switching_functions_march_2019.o [1]
+SysTick_Config          0x2007'011d   0x32  Code  Lc  main.o [1]
+SysTick_Handler         0x2007'0ad1         Code  Gb  context_switching_functions_march_2019.o [1]
+SystemCoreClock         0x2007'1220    0x4  Data  Gb  system_sam3x.o [1]
+SystemInit              0x2007'0a31   0x6e  Code  Gb  system_sam3x.o [1]
+TC0_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+TC1_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+TC2_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+TC3_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+TC4_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+TC5_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+TRNG_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+TWI0_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+TWI1_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+Ticks                   0x2007'1224    0x4  Data  Gb  kernel_functions.o [1]
+TimerInt                0x2007'079f   0xac  Code  Gb  kernel_functions.o [1]
+TimerList               0x2007'123c    0x4  Data  Gb  lists.o [1]
+UART_Handler            0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+UOTGHS_Handler          0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+USART0_Handler          0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+USART1_Handler          0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+USART2_Handler          0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+UsageFault_Handler      0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+WDT_Handler             0x2007'114f    0x2  Code  Wk  exceptions.o [1]
+WaitingList             0x2007'1238    0x4  Data  Gb  lists.o [1]
+__aeabi_memcpy          0x2007'0e0d         Code  Gb  ABImemcpy.o [3]
+__aeabi_memcpy4         0x2007'0e2d         Code  Gb  ABImemcpy.o [3]
+__aeabi_memcpy8         0x2007'0e2d         Code  Gb  ABImemcpy.o [3]
+__basic_calloc          0x2007'0dcf   0x36  Code  Gb  heap0.o [2]
+__basic_free            0x2007'0d45   0x16  Code  Gb  heap0.o [2]
+__basic_free_intern     0x2007'0d5b   0x74  Code  Lc  heap0.o [2]
+__basic_malloc          0x2007'0c99   0x18  Code  Gb  heap0.o [2]
+__basic_malloc_intern   0x2007'0cb1   0x94  Code  Lc  heap0.o [2]
+__cmain                 0x2007'118d         Code  Gb  cmain.o [3]
+__data_GetMemChunk      0x2007'1111   0x2c  Code  Gb  xgetmemchunk.o [2]
+__data_GetMemChunk::start
+                        0x2007'1254    0x4  Data  Lc  xgetmemchunk.o [2]
+__data_memzero          0x2007'113d   0x12  Code  Gb  xxmemxmemzero.o [2]
+__exit                  0x2007'11e5   0x14  Code  Gb  exit.o [4]
+__iar_copy_init3        0x2007'0eb3   0x2a  Code  Gb  copy_init3.o [3]
+__iar_data_init3        0x2007'11ad   0x28  Code  Gb  data_init.o [3]
+__iar_program_start     0x2007'1181         Code  Gb  cstartup.o [1]
+__low_level_init        0x2007'1151   0x20  Code  Gb  startup_sam3x.o [1]
+__region_NFC_RAM_end__ {Abs}
+                        0x2010'0fff         Data  Gb  <internal module>
+__region_NFC_RAM_start__ {Abs}
+                        0x2010'0000         Data  Gb  <internal module>
+__region_RAM0_end__ {Abs}
+                        0x2000'ffff         Data  Gb  <internal module>
+__region_RAM0_size__ {Abs}
+                           0x1'0000         Data  Gb  <internal module>
+__region_RAM0_start__ {Abs}
+                        0x2000'0000         Data  Gb  <internal module>
+__region_RAM1_end__ {Abs}
+                        0x2008'7fff         Data  Gb  <internal module>
+__region_RAM1_size__ {Abs}
+                             0x8000         Data  Gb  <internal module>
+__region_RAM1_start__ {Abs}
+                        0x2008'0000         Data  Gb  <internal module>
+__region_RAM_end__ {Abs}
+                        0x2008'7fff         Data  Gb  <internal module>
+__region_RAM_size__ {Abs}
+                           0x1'8000         Data  Gb  <internal module>
+__region_RAM_start__ {Abs}
+                        0x2007'0000         Data  Gb  <internal module>
+__vector_table          0x2007'0000   0xf4  Data  Gb  startup_sam3x.o [1]
+_call_main              0x2007'1199         Code  Gb  cmain.o [3]
+_exit                   0x2007'11d9         Code  Gb  cexit.o [3]
+charMbox                0x2007'1248    0x4  Data  Gb  main.o [1]
+create_listobj          0x2007'0f9f   0x14  Code  Gb  lists.o [1]
+create_mailbox          0x2007'0465   0x2e  Code  Gb  communicationTask.o [1]
+create_task             0x2007'08d7   0x8a  Code  Gb  kernel_functions.o [1]
+createlist              0x2007'0edd   0x24  Code  Gb  lists.o [1]
+exit                    0x2007'11d5    0x4  Code  Gb  exit.o [2]
+extract_readylist       0x2007'0fb3   0x22  Code  Gb  lists.o [1]
+floatMbox               0x2007'1250    0x4  Data  Gb  main.o [1]
+free                    0x2007'0e09    0x4  Code  Gb  heaptramp0.o [2]
+g0                      0x2007'1240    0x4  Data  Gb  main.o [1]
+g1                      0x2007'1244    0x4  Data  Gb  main.o [1]
+g3                      0x2007'1214    0x4  Data  Gb  main.o [1]
+high_deadline           0x2007'121c    0x4  Data  Gb  main.o [1]
+idle                    0x2007'079d    0x2  Code  Gb  kernel_functions.o [1]
+init_kernel             0x2007'084b   0x8c  Code  Gb  kernel_functions.o [1]
+insert                  0x2007'0f01   0x9e  Code  Gb  lists.o [1]
+insertMessage           0x2007'0fed   0x1e  Code  Gb  lists.o [1]
+intMbox                 0x2007'124c    0x4  Data  Gb  main.o [1]
+isContain               0x2007'10f9   0x18  Code  Gb  lists.o [1]
+isr_off                 0x2007'0c7b         Code  Gb  context_switching_functions_march_2019.o [1]
+isr_on                  0x2007'0c71         Code  Gb  context_switching_functions_march_2019.o [1]
+low_deadline            0x2007'1218    0x4  Data  Gb  main.o [1]
+main                    0x2007'0319   0xec  Code  Gb  main.o [1]
+messageRemove           0x2007'100b   0x5a  Code  Gb  lists.o [1]
+receive_no_wait         0x2007'071f   0x68  Code  Gb  communicationTask.o [1]
+receive_wait            0x2007'0599   0xf0  Code  Gb  communicationTask.o [1]
+remove_objlist          0x2007'0fd5   0x12  Code  Gb  lists.o [1]
+run                     0x2007'0961   0x20  Code  Gb  kernel_functions.o [1]
+send_no_wait            0x2007'0689   0x96  Code  Gb  communicationTask.o [1]
+send_wait               0x2007'0493  0x106  Code  Gb  communicationTask.o [1]
+switch_to_stack_of_next_task
+                        0x2007'0c5d         Code  Gb  context_switching_functions_march_2019.o [1]
+taskRemove              0x2007'1065   0x94  Code  Gb  lists.o [1]
+task_body_1             0x2007'014f  0x120  Code  Gb  main.o [1]
+task_body_2             0x2007'026f   0x30  Code  Gb  main.o [1]
+task_body_3             0x2007'029f   0x18  Code  Gb  main.o [1]
+task_body_4             0x2007'02b7   0x3a  Code  Gb  main.o [1]
+task_body_5             0x2007'02f1   0x28  Code  Gb  main.o [1]
+terminate               0x2007'0981   0x2e  Code  Gb  kernel_functions.o [1]
+wait                    0x2007'09d1   0x4c  Code  Gb  Timer.o [1]
+
+
+[1] = C:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+   4'356 bytes of readonly  code memory
+     340 bytes of readonly  data memory
+  10'316 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

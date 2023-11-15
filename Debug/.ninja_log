@@ -1,0 +1,18 @@
+# ninja log v5
+808	1742	7002931641725693	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/system_sam3x.o	cc2a40eb04acf93f
+14	793	7002931632581782	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/cstartup.o	d9a6184a5f304856
+724	826	7002931632591761	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/context_switching_functions_march_2019.o	ce9ad882cdb5e30e
+5	288	7003561647375938	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/lists.o	95044dd9629f230a
+3	1893	7002931642706378	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/communicationTask.o	76b8f0999bc14a85
+837	2019	7002931643927626	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/main.o	cefacd51cc3da5ea
+1756	2172	7002931645895690	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/exceptions.o	e2858f65423a6c77
+1869	2557	7002931649926942	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/startup_sam3x.o	9215488a9d168799
+0	199	7002931780786461	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/kernel_functions.o	5056fe3b526b7fec
+2038	2756	7002931651612936	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/Timer.o	7d47dd11b9becb3d
+298	416	7003561648666482	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Exe/RTMG.out	a734245e01497291
+2	411	7003562255495950	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/lists.o	95044dd9629f230a
+421	528	7003562256750045	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Exe/RTMG.out	a734245e01497291
+2	389	7003563728940707	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/lists.o	95044dd9629f230a
+398	522	7003563730330853	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Exe/RTMG.out	a734245e01497291
+7	611	7005794706881282	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Obj/Timer.o	7d47dd11b9becb3d
+619	957	7005794710510502	C:/Users/Mezin/Downloads/RTMK_Gr2/RTMK_Gr2/Debug/Exe/RTMG.out	a734245e01497291

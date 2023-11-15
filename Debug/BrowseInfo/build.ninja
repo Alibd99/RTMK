@@ -1,0 +1,120 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\communicationTask.c -xcl_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.xcl -macro_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\communicationTask.c -o C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.tmp
+  rspfile_name = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.xcl.rsp
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\exceptions.c -xcl_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.xcl -macro_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\exceptions.c -o C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.tmp
+  rspfile_name = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.xcl.rsp
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\kernel_functions.c -xcl_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.xcl -macro_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\kernel_functions.c -o C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.tmp
+  rspfile_name = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.xcl.rsp
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\lists.c -xcl_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.xcl -macro_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\lists.c -o C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.tmp
+  rspfile_name = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.xcl.rsp
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\main.c -xcl_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.xcl -macro_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\main.c -o C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.tmp
+  rspfile_name = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\startup_sam3x.c -xcl_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.xcl -macro_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\startup_sam3x.c -o C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.tmp
+  rspfile_name = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.xcl.rsp
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\system_sam3x.c -xcl_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.xcl -macro_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\system_sam3x.c -o C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.tmp
+  rspfile_name = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.xcl.rsp
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Timer.c -xcl_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.xcl -macro_file C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Timer.c -o C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.tmp
+  rspfile_name = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.xcl.rsp
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.pbi : INDEXER C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.xcl |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\communicationTask.c
+  flags = -out=C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.pbi -f C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.xcl
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.pbi : INDEXER C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.xcl |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\exceptions.c
+  flags = -out=C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.pbi -f C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.xcl
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.pbi : INDEXER C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.xcl |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\kernel_functions.c
+  flags = -out=C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.pbi -f C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.xcl
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.pbi : INDEXER C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.xcl |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\lists.c
+  flags = -out=C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.pbi -f C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.xcl
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\main.c
+  flags = -out=C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.pbi -f C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.xcl
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.pbi : INDEXER C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.xcl |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\startup_sam3x.c
+  flags = -out=C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.pbi -f C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.xcl
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.pbi : INDEXER C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.xcl |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\system_sam3x.c
+  flags = -out=C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.pbi -f C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.xcl
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.pbi : INDEXER C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.xcl |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Timer.c
+  flags = -out=C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.pbi -f C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.xcl
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG.pbw : MAKEBROWSE C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG.pbd
+  flags = C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG.pbd -output C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG.pbw
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part0.pbi : PDBLINK C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.pbi |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.pbi $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.pbi
+  flags = -M C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part0.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\communicationTask.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\exceptions.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\kernel_functions.pbi
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part1.pbi : PDBLINK C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.pbi |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.pbi $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.pbi
+  flags = -M C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part1.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\lists.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\main.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\startup_sam3x.pbi
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part2.pbi : PDBLINK C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.pbi |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.pbi
+  flags = -M C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part2.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\system_sam3x.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\Timer.pbi
+
+build C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG.pbd : PDBLINK C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part0.pbi |  $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part1.pbi $
+C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part2.pbi
+  flags = -M C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG.pbd C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part0.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part1.pbi C$:\Users\Mezin\Downloads\RTMK_Gr2\RTMK_Gr2\Debug\BrowseInfo\RTMG_part2.pbi
+
